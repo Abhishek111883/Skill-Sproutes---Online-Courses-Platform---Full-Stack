@@ -23,7 +23,6 @@ import { PendingClasses } from "../Pages/DashBoard/Instructor/PendingClasses";
 import { ApprovedClasses } from "../Pages/DashBoard/Instructor/ApprovedClasses";
 import { MangeUser } from "../Pages/DashBoard/Admin/ManageUser";
 import { MangeClasses } from "../Pages/DashBoard/Admin/ManageClasses";
-import { ManageApplications } from "../Pages/DashBoard/Admin/ManageApplications";
 
 const Routes = createBrowserRouter([
   {
@@ -121,10 +120,6 @@ const Routes = createBrowserRouter([
       {
         path: "manage-classes",
         element: <MangeClasses />,
-      },
-      {
-        path: "manage-applications",
-        element: <ManageApplications />,
       },
     ],
   },
