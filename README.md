@@ -1,4 +1,4 @@
-# Skill Sproutes
+# Skill Sprouts
 
 Skill Sproutes is an online course platform where users can explore, purchase, and manage courses. The platform provides different interfaces and functionalities depending on the user role (Student, Instructor, or Admin), ensuring a personalized experience for each. It offers a seamless user experience with a strong authentication system and a dark mode for enhanced aesthetics.
 
@@ -31,8 +31,8 @@ Skill Sproutes is an online course platform where users can explore, purchase, a
 - **Database:** MongoDB
 - **Authentication:** Firebase
 - **REST APIs:** Used for CRUD operations with MongoDB
-- **UI Library:** Flowbite for styled components
-- **Styling:** CSS (with dark mode support)
+- **UI Library:** Tailwind for styled components
+- **Styling:** TailwindCSS (with dark mode support)
 
 ## Installation
 
