@@ -40,3 +40,18 @@ Skill Sproutes is an online course platform where users can explore, purchase, a
    ```bash
    git clone https://github.com/yourusername/skill-sproutes.git
    cd skill-sproutes
+   ```
+
+2. Install the dependencies for both the frontend and backend:
+   
+   # Install frontend dependencies
+   ```bash
+   cd frontend
+   npm install
+   ```
+
+   # Install backend dependencies
+   ``bash
+   cd ../Backend
+   npm install
+   ```
