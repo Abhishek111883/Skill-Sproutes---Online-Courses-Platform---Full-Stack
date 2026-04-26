@@ -23,6 +23,7 @@ import { PendingClasses } from "../Pages/DashBoard/Instructor/PendingClasses";
 import { ApprovedClasses } from "../Pages/DashBoard/Instructor/ApprovedClasses";
 import { MangeUser } from "../Pages/DashBoard/Admin/ManageUser";
 import { MangeClasses } from "../Pages/DashBoard/Admin/ManageClasses";
+import { Resource } from "../Pages/DashBoard/User/Resource";
 
 const Routes = createBrowserRouter([
   {
@@ -72,6 +73,12 @@ const Routes = createBrowserRouter([
       {
         path: "enrolled-class",
         element: <EnrollItems />,
+      },
+      {
+        path: "Access-Resources/:id",
+        element: <Resource />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/class/${params.id}`),
       },
       {
         path: "my-selected",

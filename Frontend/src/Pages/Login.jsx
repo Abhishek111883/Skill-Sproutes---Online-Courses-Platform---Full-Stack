@@ -78,16 +78,14 @@ export const Login = () => {
         theme="light"
       />
 
-      <div className="font-[sans-serif]">
+      <div className="font-[sans-serif] dark:text-white">
         <div className="min-h-screen flex flex-col items-center justify-center">
           <div className="grid md:grid-cols-2 items-center gap-4 max-md:gap-8 max-w-6xl max-md:max-w-lg w-full p-4 m-4 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md">
             <div className="md:max-w-md w-full px-4 py-4">
-              <form onSubmit={handlelogin}>
+              <form onSubmit={handlelogin} className="dark:text-white">
                 <div className="mb-12">
-                  <h3 className="text-gray-800 text-3xl font-extrabold">
-                    Sign in
-                  </h3>
-                  <p className="text-sm mt-4 text-gray-800">
+                  <h3 className="text-3xl font-extrabold">Sign in</h3>
+                  <p className="text-sm mt-4">
                     Don't have an account{" "}
                     <Link
                       to="/register"
@@ -99,9 +97,7 @@ export const Login = () => {
                 </div>
 
                 <div>
-                  <label className="text-gray-800 text-xs block mb-2">
-                    Email
-                  </label>
+                  <label className=" text-xs block mb-2">Email</label>
                   <div className="relative flex items-center">
                     <input
                       name="email"
@@ -146,9 +142,7 @@ export const Login = () => {
                 </div>
 
                 <div className="mt-8">
-                  <label className="text-gray-800 text-xs block mb-2">
-                    Password
-                  </label>
+                  <label className="text-xs block mb-2">Password</label>
                   <div className="relative flex items-center">
                     <input
                       name="password"
@@ -188,10 +182,7 @@ export const Login = () => {
                       type="checkbox"
                       className="h-4 w-4 shrink-0 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                     />
-                    <label
-                      htmlFor="remember-me"
-                      className="ml-3 block text-sm text-gray-800"
-                    >
+                    <label htmlFor="remember-me" className="ml-3 block text-sm">
                       Remember me
                     </label>
                   </div>

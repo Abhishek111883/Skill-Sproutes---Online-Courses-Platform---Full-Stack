@@ -3,6 +3,7 @@ import { UseUser } from "../../../Components/Hooks/UseUser";
 import { UseAxiosSecure } from "../../../Components/Hooks/UseAxiosSecure";
 import { GridLoader } from "react-spinners";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const EnrollItems = () => {
   const { currentuser, isLoading } = UseUser();
@@ -45,7 +46,7 @@ export const EnrollItems = () => {
           {enrolledClasses.map((item, index) => (
             <div
               key={index}
-              className="max-w-sm rounded overflow-hidden shadow-lg"
+              className="max-w-sm rounded-lg overflow-hidden shadow-lg dark:border dark:border-secondary"
             >
               <img className="w-full h-64" src={item.classes.image} />
               <div className="px-6 py-4 h-44">
@@ -57,9 +58,11 @@ export const EnrollItems = () => {
                 </p>
               </div>
               <div className="pt-4 text-center mb-5">
-                <button className="p-2 px-8 bg-secondary text-center font-bold text-white rounded-md">
-                  View
-                </button>
+                <Link to={`/dashboard/Access-Resources/${item.classes._id}`}>
+                  <button className="p-2 px-8 bg-secondary text-center font-bold text-white rounded-md">
+                    View
+                  </button>
+                </Link>
               </div>
             </div>
           ))}

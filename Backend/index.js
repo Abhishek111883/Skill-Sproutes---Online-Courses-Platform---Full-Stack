@@ -55,18 +55,31 @@ const verifyjwt = (req, res, next) => {
 };
 
 const uri = process.env.MONGO_URL;
+
+// Debug logging
+console.log("MONGO_URL loaded:", uri ? "✓ Yes" : "✗ No");
+if (uri) {
+  // Hide password for security, show connection string structure
+  const hiddenUri = uri.replace(/:[^@]+@/, ":****@");
+  console.log("Connection string:", hiddenUri);
+}
+
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
     strict: true,
     deprecationErrors: true,
   },
+  connectTimeoutMS: 10000,
+  serverSelectionTimeoutMS: 10000,
 });
 
 async function run() {
   try {
+    console.log("Attempting to connect to MongoDB...");
     // Connect the client to the server (optional starting in v4.7)
     await client.connect();
+    console.log("✓ Successfully connected to MongoDB");
 
     // Connect to database collections
     const database = client.db("Cluster0");
@@ -210,7 +223,7 @@ async function run() {
         const result = await UserCollection.updateOne(
           filter,
           updatedoc,
-          options
+          options,
         );
         res.send(result);
       } catch (error) {
@@ -262,7 +275,7 @@ async function run() {
             .status(500)
             .json({ error: "An error occurred while getting the classes" });
         }
-      }
+      },
     );
 
     //get only approved classes
@@ -320,7 +333,7 @@ async function run() {
           const result = await ClassesCollection.updateOne(
             query,
             updatedoc,
-            options
+            options,
           );
           res.send(result);
         } catch (error) {
@@ -328,7 +341,7 @@ async function run() {
             .status(500)
             .json({ error: "An error occurred while updating the class" });
         }
-      }
+      },
     );
 
     // update class details(all data) by id
@@ -345,7 +358,7 @@ async function run() {
           const result = await ClassesCollection.updateOne(
             query,
             updatedoc,
-            options
+            options,
           );
           res.send(result);
         } catch (error) {
@@ -353,7 +366,7 @@ async function run() {
             .status(500)
             .json({ error: "An error occurred while updating the class" });
         }
-      }
+      },
     );
 
     // add cart-item
@@ -437,7 +450,7 @@ async function run() {
 
     //payment routes
 
-    //[ayment intent
+    //Payment intent
     app.post("/create-payment-intent", verifyjwt, async (req, res) => {
       try {
         const { price } = req.body;
@@ -496,11 +509,10 @@ async function run() {
 
         const updatedResult = await ClassesCollection.updateMany(
           classesQuery,
-          updatedDoc
+          updatedDoc,
         );
-        const enrolledResult = await EnrollmentCollection.insertOne(
-          newEnrolledData
-        );
+        const enrolledResult =
+          await EnrollmentCollection.insertOne(newEnrolledData);
         const deletedResult = await CartCollection.deleteMany(query);
         const paymentResult = await PaymentCollection.insertOne(paymentInfo);
 
@@ -677,7 +689,7 @@ async function run() {
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log(
-      "Pinged your deployment. You successfully connected to MongoDB!"
+      "Pinged your deployment. You successfully connected to MongoDB!",
     );
   } catch (error) {
     console.error("An error occurred while connecting to MongoDB:", error);

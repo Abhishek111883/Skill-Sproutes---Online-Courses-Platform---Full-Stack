@@ -6,6 +6,7 @@ import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { createTheme, ThemeProvider, Switch } from "@mui/material";
 import { FaBars as FaBa } from "react-icons/fa";
 import { UseAuth } from "../Hooks/UseAuth";
+import { UseUser } from "../Hooks/UseUser";
 
 const navlinks = [
   { label: "Home", url: "/" },
@@ -32,7 +33,8 @@ export const NavBar = () => {
   const [isHome, setisHome] = useState(false);
   const [isFixed, setisFixed] = useState(false);
   const [isDarkmode, setisDarkmode] = useState(false);
-  const { user, logout } = UseAuth();
+  const { logout } = UseAuth();
+  const { currentuser } = UseUser();
 
   const toggleMobileviewopen = () => {
     setisMoibleviewopen(!isMobileviewopen);
@@ -119,7 +121,7 @@ export const NavBar = () => {
 
                 {/* {user} */}
 
-                {user ? null : islogin ? (
+                {currentuser ? null : islogin ? (
                   <li>
                     <NavLink
                       to="/register"
@@ -151,7 +153,7 @@ export const NavBar = () => {
                   </li>
                 )}
 
-                {user && (
+                {currentuser && (
                   <li>
                     <NavLink
                       to="/dashboard"
@@ -168,16 +170,16 @@ export const NavBar = () => {
                   </li>
                 )}
 
-                {user && (
+                {currentuser && (
                   <li>
                     <img
-                      src={user.photoURL}
+                      src={currentuser.photoUrl}
                       className="h-[40px] w-[40px] rounded-full"
                     />
                   </li>
                 )}
 
-                {user && (
+                {currentuser && (
                   <li>
                     <button
                       className={`px-3 py-2 rounded-md border-secondary border-2 font-bold ${

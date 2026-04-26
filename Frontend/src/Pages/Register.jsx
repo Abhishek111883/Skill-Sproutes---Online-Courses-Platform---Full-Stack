@@ -116,84 +116,72 @@ export const Register = () => {
         theme="light"
       />
 
-      <div className="max-w-4xl mx-auto font-[sans-serif] p-6">
+      <div className="max-w-4xl mx-auto font-[sans-serif] p-6 dark:text-white">
         <div className="text-center mb-16">
-          <h1 className="text-gray-800 text-2xl  font-bold mt-6">
-            Sign up into your account
-          </h1>
+          <h1 className="text-4xl font-bold mt-6">Sign up into your account</h1>
         </div>
 
         <form onSubmit={handlesignup}>
           <div className="grid sm:grid-cols-2 gap-8">
             <div>
-              <label className="text-gray-800 text-sm mb-2 block">Name</label>
+              <label className="text-sm mb-2 block">Name</label>
               <input
                 name="name"
                 type="text"
-                className="bg-gray-100 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
+                className="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
                 placeholder="Enter name"
               />
             </div>
             <div>
-              <label className="text-gray-800 text-sm mb-2 block">
-                PhotoUrl
-              </label>
+              <label className=" text-sm mb-2 block">PhotoUrl</label>
               <input
                 name="photoUrl"
                 type="text"
-                className="bg-gray-100 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
+                className="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
                 placeholder="Enter last name"
               />
             </div>
             <div>
-              <label className="text-gray-800 text-sm mb-2 block">
-                Email Id
-              </label>
+              <label className=" text-sm mb-2 block">Email Id</label>
               <input
                 name="email"
                 type="text"
-                className="bg-gray-100 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
+                className="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
                 placeholder="Enter email"
               />
             </div>
             <div>
-              <label className="text-gray-800 text-sm mb-2 block">
-                Mobile No.
-              </label>
+              <label className=" text-sm mb-2 block">Mobile No.</label>
               <input
                 name="number"
                 type="number"
-                className="bg-gray-100 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
+                className="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
                 placeholder="Enter mobile number"
               />
             </div>
             <div>
-              <label className="text-gray-800 text-sm mb-2 block">
-                Password
-              </label>
+              <label className=" text-sm mb-2 block">Password</label>
               <input
                 name="password"
                 type="password"
-                className="bg-gray-100 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
+                className="bg-gray-100 w-full  text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
                 placeholder="Enter password"
               />
             </div>
             <div>
-              <label className="text-gray-800 text-sm mb-2 block">
-                Confirm Password
-              </label>
+              <label className=" text-sm mb-2 block">Confirm Password</label>
               <input
                 name="cpassword"
                 type="password"
-                className="bg-gray-100 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
+                className="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
                 placeholder="Enter confirm password"
               />
             </div>
             <div>
-              <label className="text-gray-800 text-sm mb-2 block">Gender</label>
+              <label className=" text-sm mb-2 block">Gender</label>
               <select
                 name="gender"
-                className="bg-gray-100 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
+                className="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
               >
                 <option value="">Select gender</option>
                 <option value="male">Male</option>
@@ -203,12 +191,10 @@ export const Register = () => {
             </div>
             <div>
               <div>
-                <label className="text-gray-800 text-sm mb-2 block">
-                  Address
-                </label>
+                <label className=" text-sm mb-2 block">Address</label>
                 <textarea
                   name="address"
-                  className="bg-gray-100 w-full text-gray-800 text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
+                  className="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md focus:bg-transparent outline-blue-500 transition-all"
                   placeholder="Enter address"
                 ></textarea>
               </div>

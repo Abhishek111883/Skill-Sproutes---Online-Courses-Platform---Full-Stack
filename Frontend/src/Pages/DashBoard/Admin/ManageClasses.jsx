@@ -54,7 +54,7 @@ export const MangeClasses = () => {
         </div>
       </div>
 
-      {classes.map((item, index) => (
+      {classes.reverse().map((item, index) => (
         <div
           key={item._id}
           className="md:flex lg:flex items-start justify-center gap-3 p-2"

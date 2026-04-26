@@ -35,7 +35,7 @@ export const MangeUser = () => {
         </h1>
       </div>
 
-      <div className="md:flex lg:flex items-start justify-center gap-3 p-2">
+      <div className="md:flex lg:flex items-start justify-center gap-3 p-2 lg:mb-5">
         <div className=" w-10 font-bold text-xl mr-3 lg:mb-0 mb-3">#</div>
         <div className=" w-72 font-bold text-xl lg:mb-0 mb-3">Name</div>
         <div className=" w-96 font-bold text-xl lg:mb-0 mb-3">Email</div>
@@ -48,7 +48,7 @@ export const MangeUser = () => {
           key={item._id}
           className="md:flex lg:flex items-start justify-center gap-3 p-2"
         >
-          <div className="w-10 font-semibold text-base mr-6 lg:mb-0 mb-3">
+          <div className="w-10 font-semibold text-base mr-3 lg:mb-0 mb-3">
             {index + 1}
           </div>
           <div className=" w-72 font-semibold text-base lg:mb-0 mb-3">
